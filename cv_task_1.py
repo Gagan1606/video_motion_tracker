@@ -18,7 +18,6 @@ while True:
     _, frame=capture.read() #frame acquisition
     preprocess = cv2.GaussianBlur(frame, (5, 5), 0)
     fgMask=bgSub.apply(preprocess, learningRate=1e-3) #seperating static and moving regions (I'm aware that the pipeline asks to do canny first, refer the readme for the reason i did this)
-    # edges=cv2.Canny(fgMask, 60, 180)
     kernel=np.ones((5, 5), np.uint8)
     stable=cv2.morphologyEx(fgMask, cv2.MORPH_CLOSE, kernel) #stabilize and clean the obtained mask
     stable=cv2.morphologyEx(stable, cv2.MORPH_OPEN, kernel)
@@ -67,3 +66,4 @@ while True:
     cv2.imshow("mask", stable)
     key=cv2.waitKey(30)
     if key == ord('x'): exit()
+

@@ -1,4 +1,4 @@
-`
+```
 Aim : 
 Use CV techniques to detect an object in motion in a video
 
@@ -13,4 +13,4 @@ Process:
     Calculate centroid of each contour in the moving region and compare centroids of the contour in two consecutive frames
     Whichever contour has the maximum motion is the detected contour
 • Draw bounding box,convex hull, outline and trajectory for the detected contour. 
-`
+```

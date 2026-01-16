@@ -22,6 +22,6 @@ Reason to deviate from the given pipeline:
         frame acquisition -> object isolation -> stabilization -> canny edge detection -> contour detection
 
     when i apply canny on the raw frame, it gives a binary of every minimal edge on the frame which contains a lot of noise, and bg mask expects an rgb frame because it basically learns from the pixel values if something is foreground or background right and all of this is resulting in a less accurate output. So i thought as canny detects edges according to the sudden increase in pixel values, it could take the stabilized mask and detect edges of the moving part.
-    Also applying canny on raw frame is a bit of too much computation and was making the output a bit choppy. 
+    Also applying canny on raw frame is a bit of too much computation as it needs to detect edges in the entire raw frame as opposed edges in the moving part alone and was making the output a bit choppy. 
 
 ```
